@@ -1,4 +1,4 @@
-# CS 320 - Software Testing, Automation, and Quality Assurance
+# Software Testing, Automation, and Quality Assurance
 --- 
 # Southern New Hampshire University 
 Code and projects with version control. 

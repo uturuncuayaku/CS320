@@ -1,4 +1,4 @@
-package test;
+package edu.snhu.tests.task_services;
 
 import java.util.function.Supplier;
 

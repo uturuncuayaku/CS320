@@ -13,6 +13,4 @@ Creating unit tests using JUnit to uncover errors in a mobile application. Codin
  
 - The task service shall be able to add tasks with a unique ID. 
 - The task service shall be able to delete tasks per task ID. 
-- The task service shall be able to update task fields per task ID. The following fields are updatable: 
--- Name 
--- Description 
+- The task service shall be able to update task fields per task ID. The following fields are updatable: Name, and Description. 

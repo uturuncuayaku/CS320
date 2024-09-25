@@ -46,7 +46,8 @@ class TaskServiceTest {
 		
 		Assertions.assertThrows(IllegalArgumentException.class, () ->{
 			task_service.deleteTasks("1234567890");
-		});		
+		});
+		
 	}
 	
 	@Test

@@ -1,7 +1,7 @@
 # Module Four - Customer Requirements
 --- 
 
-Creating unit tests using JUnit to uncover errors in a mobile application. Coding application to meet customer requirements. This milestone within our mobile application, we will deliver task services that is capable of adding, updating, and deleting task objects within the application.
+We are developing unit tests using JUnit to identify potential errors in the mobile application, ensuring the code aligns with customer requirements. In this milestone of our mobile application project, we will implement task management services that allow users to add, update, and delete task objects. 
 
 # Task Requirements
 

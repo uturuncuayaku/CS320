@@ -41,7 +41,7 @@ public class Task {
 	 * @throws	IllegalArgumentException	 
 	 * @return	none
 	 */
-	public void validateId(String Id) {
+	private void validateId(String Id) {
 		if (Id == null || Id.length() > 10) {
 			throw new IllegalArgumentException("ID is invalid, cannot be longer than 10 characters or null.");
 		}
@@ -54,7 +54,7 @@ public class Task {
 	 * @throws	IllegalArgumentException
 	 * @return	none
 	 */
-	public void validateName(String name) {
+	private void validateName(String name) {
 		if (name == null || name.length() > 20) {
 			throw new IllegalArgumentException("Name is invalid, cannot be longer than 20 characters or null.");
 		}
@@ -67,7 +67,7 @@ public class Task {
 	 * @throws	IllegalArgumentException	
 	 * @return	none
 	 */
-	public void validateDesc(String description) {
+	private void validateDesc(String description) {
 		if (description == null || description.length() > 50) {
 			throw new IllegalArgumentException("Description is invalid, cannot be longer than 50 characters or null.");
 		}

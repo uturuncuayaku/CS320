@@ -36,6 +36,14 @@ class TaskTest {
 	
 	@Test
 	void testName() {
+		
+		//Test getName function
+        String name = "valid name";
+		Task validTask = new Task("validId", name, "description");
+        String getName = validTask.getName();
+        
+        Assertions.assertEquals(getName, name);   	
+
 		//Test null name
 		Assertions.assertThrows(IllegalArgumentException.class, () -> {
 			new Task("1234567890", null, "description");
@@ -61,6 +69,18 @@ class TaskTest {
 	
 	@Test
 	void testDesc() {
+		//Test getDescription function
+		String desc = "description";
+		Task validTask = new Task("validId", "name", desc);
+		String getDesc = validTask.getDescription();
+		Assertions.assertEquals(desc, getDesc);
+ 
+		//Test setDescription function
+		String updateDesc = "new description";
+		validTask.setDescription(updateDesc);
+		String desc1 = validTask.getDescription();
+		Assertions.assertEquals(updateDesc, desc1);
+		
 		//Test null description
 		Assertions.assertThrows(IllegalArgumentException.class, () -> {
 			new Task("1234567890", "name", null);

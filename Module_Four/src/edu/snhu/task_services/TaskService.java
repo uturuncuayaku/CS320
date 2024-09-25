@@ -63,7 +63,7 @@ public class TaskService {
 	 * and we must also validate the name as well.
 	 * @throws	IllegalArgumentException 
 	 */
-	public void updateTaskName(String id, String name) {
+	public void updateTaskName(String id, String name){
 		//Search for the task.
 		if (task_map.containsKey(id)) {
 			//update the task name if found.

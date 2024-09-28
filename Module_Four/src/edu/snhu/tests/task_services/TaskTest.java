@@ -10,9 +10,29 @@ class TaskTest {
 
     @Test
     public void testValidTask() {
-        // Test with a valid ID
+    	
+        //Test with a valid ID
         Task validTask = new Task("validId", "name", "description");
         Assertions.assertNotNull(validTask);
+        
+        //Test with all null values
+        Assertions.assertThrows(IllegalArgumentException.class,()->{
+        	new Task(null, null, null);
+        });
+        //Test with one null value
+        Assertions.assertThrows(IllegalArgumentException.class,()->{
+        	new Task(null, "valNam", "valid desc");
+        });
+        //Test with two valid values, and one null value
+        Assertions.assertThrows(IllegalArgumentException.class,()->{
+        	new Task("12", null, "valid description");
+        });
+        
+        //Test with two valid values, and one null value
+        Assertions.assertThrows(IllegalArgumentException.class,()->{
+        	new Task("123", "name", null);
+        });
+        
     }
     
 	@Test
@@ -38,11 +58,10 @@ class TaskTest {
 	void testName() {
 		
 		//Test getName function
-        String name = "valid name";
-		Task validTask = new Task("validId", name, "description");
+        String validName = "valid name";
+		Task validTask = new Task("validId", validName, "description");
         String getName = validTask.getName();
-        
-        Assertions.assertEquals(getName, name);   	
+        Assertions.assertEquals(getName, validName);   	
 
 		//Test null name
 		Assertions.assertThrows(IllegalArgumentException.class, () -> {
@@ -56,14 +75,19 @@ class TaskTest {
 		
 		//Test getting name and updating to a new name
 		String original_name = "Task Name";
-		Task test_task = new Task("1234567890", original_name, "Task Description");
-		String old_name = test_task.getName();
+		Task original_task = new Task("1234567890", original_name, "Task Description");
+		String old_name = original_task.getName();
 		Assertions.assertEquals(old_name, original_name);
 
-		//Updating name
+		//Test updating name
 		String new_name = "New Name";
-		test_task.setName(new_name);
-		Assertions.assertEquals(new_name, test_task.getName());
+		original_task.setName(new_name);
+		Assertions.assertEquals(new_name, original_task.getName());
+		
+		//Test updating name to null
+		Assertions.assertThrows(IllegalArgumentException.class,()->{
+			original_task.setName(null);
+		});
 		
 	}
 	
@@ -94,13 +118,18 @@ class TaskTest {
 		//Test getting description and updating to a new description
 		String original_description = "Task description";
 		Task test_task = new Task("1234567890", "Task Name", original_description);
-		String old_desc = test_task.getDescription();
-		Assertions.assertEquals(old_desc, original_description);
+		String get_desc = test_task.getDescription();
+		Assertions.assertEquals(get_desc, original_description);
 
-		//Updating name
+		//Test updating description to valid name
 		String new_desc = "New Description";
 		test_task.setDescription(new_desc);
-		Assertions.assertEquals(new_desc, test_task.getDescription());		
+		Assertions.assertEquals(new_desc, test_task.getDescription());	
+		
+		//Test updating description to null
+		Assertions.assertThrows(IllegalArgumentException.class,()->{
+			test_task.setDescription(null);
+		});
 		
 	}
 

@@ -33,7 +33,7 @@ public class TaskService {
 	 */
 	public void addTasks(String id, Task task) {
 		//Search through the hash map for a task with the id given
-		if (!task_map.containsKey(id)) {
+		if (id != null && task != null && id == task.getId() && !task_map.containsKey(id)) {
 			//Place our task within the mapping of our unique id			
 			task_map.put(id, task);
 			
